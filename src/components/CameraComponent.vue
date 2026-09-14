@@ -6,14 +6,14 @@
       <span>Tap the button below to take a photo.</span>
     </div>
 
-    <ion-button
-      expand="block"
+    <button
+      type="button"
       class="capture-button"
       @click="takePicture"
     >
-      <ion-icon slot="start" :icon="cameraOutline"></ion-icon>
-      Take Picture
-    </ion-button>
+      <ion-icon :icon="cameraOutline"></ion-icon>
+      <span>Take Picture</span>
+    </button>
   </div>
 </template>
 
@@ -81,17 +81,44 @@ const takePicture = async () => {
 }
 
 .capture-button {
-  --background: #a67c52;
-  --background-hover: #8f6845;
-  --background-activated: #805d3e;
-  --color: #fffaf4;
-  --border-radius: 14px;
-  --box-shadow: 0 5px 12px rgba(116, 84, 52, 0.18);
-
+  width: 100%;
   height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #a67c52;
+  color: #fffaf4;
+
+  border: none;
+  border-radius: 14px;
+
+  box-shadow: 0 5px 12px rgba(116, 84, 52, 0.18);
+
+  font-family: inherit;
   font-size: 16px;
   font-weight: 600;
-  margin: 0;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.capture-button:hover {
+  background: #8f6845;
+}
+
+.capture-button:active {
+  background: #805d3e;
+  transform: scale(0.98);
+}
+
+.capture-button:focus {
+  outline: 3px solid rgba(166, 124, 82, 0.3);
+  outline-offset: 3px;
 }
 
 .capture-button ion-icon {

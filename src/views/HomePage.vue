@@ -70,11 +70,7 @@ const addPhoto = (photo: string) => {
 }
 
 onMounted(() => {
-  const savedPhotos = localStorage.getItem('snapgallery-photos')
-
-  if (savedPhotos) {
-    capturedPhotos.value = JSON.parse(savedPhotos)
-  }
+  capturedPhotos.value = []
 })
 </script>
 

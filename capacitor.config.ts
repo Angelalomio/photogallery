@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.lomio.photogallery',
-  appName: 'MyGallery',
+  appName: 'My Gallery',
   webDir: 'dist'
 };
 
