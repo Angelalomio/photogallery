@@ -5,7 +5,7 @@
         <ion-title>
           <div class="brand">
             <div class="brand-icon">
-              <ion-icon :icon="cameraOutline"></ion-icon>
+              <IonIcon :icon="cameraOutline" />
             </div>
 
             <span>MyGallery</span>
@@ -21,7 +21,7 @@
         <section class="camera-card">
           <div class="section-heading">
             <div class="section-icon">
-              <ion-icon :icon="cameraOutline"></ion-icon>
+              <IonIcon :icon="cameraOutline" />
             </div>
 
             <div>
@@ -53,6 +53,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { IonIcon } from '@ionic/vue'
 import { cameraOutline } from 'ionicons/icons'
 
 import CameraComponent from '../components/CameraComponent.vue'
@@ -85,11 +86,16 @@ ion-content.gallery-page {
   --background: #f3eadf;
 }
 
+.custom-header {
+  padding-top: env(safe-area-inset-top);
+}
+
 .custom-header ion-toolbar {
   --background: #f8f1e8;
   --color: #4d3929;
   --border-color: #e4d5c3;
   --border-width: 0 0 1px 0;
+  --min-height: 64px;
 }
 
 .brand {
@@ -111,6 +117,12 @@ ion-content.gallery-page {
   align-items: center;
   justify-content: center;
   font-size: 27px;
+  flex-shrink: 0;
+}
+
+.brand-icon ion-icon,
+.section-icon ion-icon {
+  display: block;
 }
 
 .page-container {
@@ -145,6 +157,7 @@ ion-content.gallery-page {
   align-items: center;
   justify-content: center;
   font-size: 32px;
+  flex-shrink: 0;
 }
 
 h2 {
