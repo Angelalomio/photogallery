@@ -60,6 +60,7 @@ import PhotoGalleryComponent from '../components/PhotoGalleryComponent.vue'
 
 const capturedPhotos = ref<string[]>([])
 
+// Add new captured photo
 const addPhoto = (photo: string) => {
   capturedPhotos.value.unshift(photo)
 
@@ -69,8 +70,13 @@ const addPhoto = (photo: string) => {
   )
 }
 
+// Load saved photos when the page opens or reloads
 onMounted(() => {
-  capturedPhotos.value = []
+  const savedPhotos = localStorage.getItem('snapgallery-photos')
+
+  if (savedPhotos) {
+    capturedPhotos.value = JSON.parse(savedPhotos)
+  }
 })
 </script>
 
