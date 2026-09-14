@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MyGallery</string>
+    <string name="title_activity_main">MyGallery</string>
+    <string name="package_name">com.lomio.photogallery</string>
+    <string name="custom_url_scheme">com.lomio.photogallery</string>
+</resources>

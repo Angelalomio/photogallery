@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'photogallery',
+  appId: 'com.lomio.photogallery',
+  appName: 'MyGallery',
   webDir: 'dist'
 };
 
